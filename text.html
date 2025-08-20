@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>محمد طاها | پروفایل مدرن</title>
+  <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Vazir', sans-serif;
+      background: url("https://picsum.photos/1920/1080?blur=7") no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      backdrop-filter: blur(5px);
+    }
+
+    /* استایل جعبه شیشه‌ای عمومی */
+    .glass {
+      width: 300px;
+      height: 530px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 25px;
+      margin: 20px;
+      text-align: center;
+      color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glass:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
+    }
+    h1 {
+      font-size: 22px;
+      margin: 8px 0;
+      color: #ffffff;
+    }
+
+    h2 {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ffffff;
+    }
+
+    لینک‌ها
+
+    .links a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+
+    /* ساعت ایران */
+    .iran-time-box {
+      width: 300px;
+      height: 30px;
+      font-size: 18px;
+      font-weight: bold;
+            background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 25px;
+      margin: 20px;
+      text-align: center;
+      color: #000000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    a{
+        display: block;
+      margin: 10px 0;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="glass profile">
+    <h1>نام: محمد طاها</h1>
+    <h1>سن: 15</h1>
+    <h1>شهر: کرج</h1>
+    <h2>بیوگرافی من</h2>
+    <a href="tel:09389535290">📞 09389535290</a>
+    <a href="https://t.me/Mr_t4h4" target="_blank">👨‍💻 تلگرام من</a>
+    <a href="https://instagram.com/mr_t4h4" target="_blank">📸 اینستاگرام من</a>
+         <a href="https://rubika.ir/mr_t4h4" target="_blank">📿روبیکا من</a>
+    <a href="https://t.me/ir0dep" target="_blank">📱 کانال تلگرام</a>
+        <a href="https://instagram.com/mr_t4h4" target="_blank">📸 اینستاگرام من</a>
+  </div>
+
+  <!-- ساعت ایران -->
+  <div class="glass iran-time-box">
+    <div id="iran-date">در حال بارگذاری...</div>
+    <div id="iran-time">در حال بارگذاری...</div>
+  </div>
+
+  <script>
+    // تابع به‌روزرسانی ساعت ایران
+    function updateIranTime() {
+      const iranTime = new Date().toLocaleString("fa-IR-u-ca-persian", {
+        timeZone: "Asia/Tehran",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        
+        
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      });
+
+      const parts = iranTime.split("،");
+      document.getElementById("iran-date").textContent = parts[0];
+      document.getElementById("iran-time").textContent = parts[1];
+    }
+
+    updateIranTime();
+    setInterval(updateIranTime, 1000);
+  </script>
+
+</body>
+</html>
